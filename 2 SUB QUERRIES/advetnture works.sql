@@ -126,3 +126,20 @@ SELECT [LocationID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
   WHERE StockedQty = (SELECT MAX(StockedQty)   FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]     );
+
+  --  select vendor with the highest  import bill --
+  SELECT TOP (1000) [PurchaseOrderID]
+      ,[RevisionNumber]
+      ,[Status]
+      ,[EmployeeID]
+      ,[VendorID]
+      ,[ShipMethodID]
+      ,[OrderDate]
+      ,[ShipDate]
+      ,[SubTotal]
+      ,[TaxAmt]
+      ,[Freight]
+      ,[TotalDue]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderHeader]
+  WHERE TotalDue = (SELECT MAX(TotalDue)   FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderHeader]   );
