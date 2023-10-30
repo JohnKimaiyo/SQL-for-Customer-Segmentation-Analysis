@@ -65,3 +65,17 @@ SELECT [LocationID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[TransactionHistoryArchive]
   WHERE ActualCost =(SELECT Max(ActualCost)   FROM [AdventureWorks2019].[Production].[TransactionHistoryArchive] );
+
+  -- Select product with the histes order qty --
+  SELECT TOP (1000) [WorkOrderID]
+      ,[ProductID]
+      ,[OrderQty]
+      ,[StockedQty]
+      ,[ScrappedQty]
+      ,[StartDate]
+      ,[EndDate]
+      ,[DueDate]
+      ,[ScrapReasonID]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[WorkOrder]
+  WHERE OrderQty=(SELECT MAX(OrderQty)    FROM [AdventureWorks2019].[Production].[WorkOrder]  )
