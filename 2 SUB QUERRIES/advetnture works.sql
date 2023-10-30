@@ -22,3 +22,12 @@ SELECT [LocationID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[Location]
   WHERE [CostRate] = (SELECT Max(CostRate)    FROM [AdventureWorks2019].[Production].[Location]);
+
+  -- select date with the hightest standardcost ---
+  SELECT  [ProductID]
+      ,[StartDate]
+      ,[EndDate]
+      ,[StandardCost]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[ProductCostHistory]
+  WHERE  [StandardCost] = (SELECT Max([StandardCost]) FROM [AdventureWorks2019].[Production].[ProductCostHistory]      )
