@@ -52,3 +52,16 @@ SELECT [LocationID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]
   WHERE ListPrice =  (SELECT Max( ListPrice)   FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]    )
+
+  -- select prouct with the hsted actual cost --
+  SELECT TOP (1000) [TransactionID]
+      ,[ProductID]
+      ,[ReferenceOrderID]
+      ,[ReferenceOrderLineID]
+      ,[TransactionDate]
+      ,[TransactionType]
+      ,[Quantity]
+      ,[ActualCost]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[TransactionHistoryArchive]
+  WHERE ActualCost =(SELECT Max(ActualCost)   FROM [AdventureWorks2019].[Production].[TransactionHistoryArchive] );
