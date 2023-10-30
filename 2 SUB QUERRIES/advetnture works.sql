@@ -143,3 +143,15 @@ SELECT [LocationID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderHeader]
   WHERE TotalDue = (SELECT MAX(TotalDue)   FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderHeader]   );
+
+-- select shipping companing with the hightest shipping cost --
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [ShipMethodID]
+      ,[Name]
+      ,[ShipBase]
+      ,[ShipRate]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Purchasing].[ShipMethod]
+  WHERE ShipBase =(SELECT MAX(ShipBase)    FROM [AdventureWorks2019].[Purchasing].[ShipMethod] );
+
