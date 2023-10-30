@@ -31,3 +31,15 @@ SELECT [LocationID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[ProductCostHistory]
   WHERE  [StandardCost] = (SELECT Max([StandardCost]) FROM [AdventureWorks2019].[Production].[ProductCostHistory]      )
+
+  -- select prodtc wth the higtest quantity --
+
+  SELECT TOP (1000) [ProductID]
+      ,[LocationID]
+      ,[Shelf]
+      ,[Bin]
+      ,[Quantity]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[ProductInventory]
+  WHERE Quantity = (SELECT Max(Quantity)  FROM [AdventureWorks2019].[Production].[ProductInventory]    )
