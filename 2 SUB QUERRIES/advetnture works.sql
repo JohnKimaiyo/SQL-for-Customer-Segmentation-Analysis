@@ -95,3 +95,18 @@ SELECT [LocationID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[WorkOrderRouting]
   WHERE PlannedCost = (SELECT Max(PlannedCost)    FROM [AdventureWorks2019].[Production].[WorkOrderRouting]  );
+
+  -- product with the highest standard price --
+  SELECT TOP (1000) [ProductID]
+      ,[BusinessEntityID]
+      ,[AverageLeadTime]
+      ,[StandardPrice]
+      ,[LastReceiptCost]
+      ,[LastReceiptDate]
+      ,[MinOrderQty]
+      ,[MaxOrderQty]
+      ,[OnOrderQty]
+      ,[UnitMeasureCode]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Purchasing].[ProductVendor]
+  WHERE StandardPrice = (SELECT MAX(StandardPrice) FROM [AdventureWorks2019].[Purchasing].[ProductVendor] )
