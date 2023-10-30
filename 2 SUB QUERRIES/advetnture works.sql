@@ -167,3 +167,16 @@ SELECT TOP (1000) [CreditCardID]
   FROM [AdventureWorks2019].[Sales].[CreditCard]
   WHERE ExpYear = (SELECT MAX(ExpYear )      FROM [AdventureWorks2019].[Sales].[CreditCard]   );
 
+
+-- select currency with the weakest rate agaisnt USD --
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [CurrencyRateID]
+      ,[CurrencyRateDate]
+      ,[FromCurrencyCode]
+      ,[ToCurrencyCode]
+      ,[AverageRate]
+      ,[EndOfDayRate]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Sales].[CurrencyRate]
+
+  WHERE AverageRate = (SELECT MAX(AverageRate)   FROM [AdventureWorks2019].[Sales].[CurrencyRate]   );
