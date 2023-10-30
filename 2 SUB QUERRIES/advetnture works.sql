@@ -180,3 +180,18 @@ SELECT TOP (1000) [CurrencyRateID]
   FROM [AdventureWorks2019].[Sales].[CurrencyRate]
 
   WHERE AverageRate = (SELECT MAX(AverageRate)   FROM [AdventureWorks2019].[Sales].[CurrencyRate]   );
+
+
+-- select country with the hishhets sales year --
+SELECT TOP (1000) [TerritoryID]
+      ,[Name]
+      ,[CountryRegionCode]
+      ,[Group]
+      ,[SalesYTD]
+      ,[SalesLastYear]
+      ,[CostYTD]
+      ,[CostLastYear]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Sales].[SalesTerritory]
+  WHERE SalesLastYear = (SELECT MAX(SalesLastYear)    FROM [AdventureWorks2019].[Sales].[SalesTerritory])
