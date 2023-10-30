@@ -155,3 +155,15 @@ SELECT TOP (1000) [ShipMethodID]
   FROM [AdventureWorks2019].[Purchasing].[ShipMethod]
   WHERE ShipBase =(SELECT MAX(ShipBase)    FROM [AdventureWorks2019].[Purchasing].[ShipMethod] );
 
+
+
+-- select year with the longest expiry date --
+SELECT TOP (1000) [CreditCardID]
+      ,[CardType]
+      ,[CardNumber]
+      ,[ExpMonth]
+      ,[ExpYear]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Sales].[CreditCard]
+  WHERE ExpYear = (SELECT MAX(ExpYear )      FROM [AdventureWorks2019].[Sales].[CreditCard]   );
+
