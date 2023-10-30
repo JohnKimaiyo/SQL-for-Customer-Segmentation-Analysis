@@ -43,3 +43,12 @@ SELECT [LocationID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[ProductInventory]
   WHERE Quantity = (SELECT Max(Quantity)  FROM [AdventureWorks2019].[Production].[ProductInventory]    )
+
+  -- select product id with hightest list price --
+  SELECT TOP (1000) [ProductID]
+      ,[StartDate]
+      ,[EndDate]
+      ,[ListPrice]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]
+  WHERE ListPrice =  (SELECT Max( ListPrice)   FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]    )
