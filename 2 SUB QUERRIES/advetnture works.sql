@@ -110,3 +110,19 @@ SELECT [LocationID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Purchasing].[ProductVendor]
   WHERE StandardPrice = (SELECT MAX(StandardPrice) FROM [AdventureWorks2019].[Purchasing].[ProductVendor] )
+
+
+  -- selet product id with the hishets stocked qty --
+  SELECT TOP (1000) [PurchaseOrderID]
+      ,[PurchaseOrderDetailID]
+      ,[DueDate]
+      ,[OrderQty]
+      ,[ProductID]
+      ,[UnitPrice]
+      ,[LineTotal]
+      ,[ReceivedQty]
+      ,[RejectedQty]
+      ,[StockedQty]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
+  WHERE StockedQty = (SELECT MAX(StockedQty)   FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]     );
