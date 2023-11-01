@@ -9,3 +9,8 @@ WHERE base_interest_rate = (SELECT MAX(base_interest_rate)  FROM bank.loan_type 
 -- selct loan tyoe with the highest amount --
 SELECT * FROM bank.loan
 WHERE amount_paid = (SELECT MAX(amount_paid)   FROM bank.loan  );
+
+-- select  descripoin with hist balance --
+
+SELECT * FROM bank.transaction
+WHERE amount =(SELECT MAX(amount) FROM bank.transaction )
