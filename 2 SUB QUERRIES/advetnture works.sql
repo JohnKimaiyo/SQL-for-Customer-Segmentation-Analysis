@@ -195,3 +195,12 @@ SELECT TOP (1000) [TerritoryID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Sales].[SalesTerritory]
   WHERE SalesLastYear = (SELECT MAX(SalesLastYear)    FROM [AdventureWorks2019].[Sales].[SalesTerritory])
+
+  -- select naotion id number with above average vataion hours --
+SELECT
+      [NationalIDNumber]
+
+      ,[VacationHours]
+   
+  FROM [AdventureWorks2019].[HumanResources].[Employee]
+  WHERE VacationHours < (select avg(VacationHours)   FROM [AdventureWorks2019].[HumanResources].[Employee]   )
