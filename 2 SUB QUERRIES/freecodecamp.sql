@@ -19,3 +19,16 @@ SELECT TOP (1000) [id]
   WHERE country IN (SELECT country
     FROM [freecodecamp dataset].[dbo].[Sheet1$]
   WHERE country = 'USA');
+
+
+  /****** select salary in india ******/
+SELECT TOP (1000) [id]
+      ,[name]
+      ,[role]
+      ,[wage]
+      ,[country]
+  FROM [freecodecamp dataset].[dbo].[Sheet1$]
+  WHERE country IN (SELECT country
+  FROM [freecodecamp dataset].[dbo].[Sheet1$]
+  WHERE country =  'India'
+  )
