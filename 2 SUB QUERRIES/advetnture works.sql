@@ -275,3 +275,33 @@ SELECT AVG(CostRate) [LocationID]
   /****** Script for SelectTopNRows command from SSMS  ******/
 SELECT AVG(SafetyStockLevel)
   FROM [AdventureWorks2019].[Production].[Product]
+
+  -- select  above  avg safety levels -- 
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [ProductID]
+      ,[Name]
+      ,[ProductNumber]
+      ,[MakeFlag]
+      ,[FinishedGoodsFlag]
+      ,[Color]
+      ,[SafetyStockLevel]
+      ,[ReorderPoint]
+      ,[StandardCost]
+      ,[ListPrice]
+      ,[Size]
+      ,[SizeUnitMeasureCode]
+      ,[WeightUnitMeasureCode]
+      ,[Weight]
+      ,[DaysToManufacture]
+      ,[ProductLine]
+      ,[Class]
+      ,[Style]
+      ,[ProductSubcategoryID]
+      ,[ProductModelID]
+      ,[SellStartDate]
+      ,[SellEndDate]
+      ,[DiscontinuedDate]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[Product]
+  WHERE SafetyStockLevel<( SELECT AVG(SafetyStockLevel)   FROM [AdventureWorks2019].[Production].[Product]  )
