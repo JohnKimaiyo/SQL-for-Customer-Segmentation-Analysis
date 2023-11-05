@@ -334,3 +334,10 @@ SELECT TOP (1000) [ProductID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]
   WHERE ListPrice > (SELECT AVG(ListPrice)    FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]   )
+
+
+  -- selct avereatgre actual coost
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT  AVG(ActualCost)
+      
+  FROM [AdventureWorks2019].[Production].[TransactionHistory]
