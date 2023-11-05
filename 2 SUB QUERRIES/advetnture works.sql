@@ -225,3 +225,8 @@ SELECT TOP (1000) [BusinessEntityID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[HumanResources].[Employee]
   WHERE VacationHours > (SELECT AVG(VacationHours)  FROM [AdventureWorks2019].[HumanResources].[Employee]  )
+
+  --  avaergae vacation hours --
+  SELECT AVG(VacationHours)
+
+  FROM [AdventureWorks2019].[HumanResources].[Employee]
