@@ -204,3 +204,24 @@ SELECT
    
   FROM [AdventureWorks2019].[HumanResources].[Employee]
   WHERE VacationHours < (select avg(VacationHours)   FROM [AdventureWorks2019].[HumanResources].[Employee]   )
+
+  -- individuals with abive averagre vacation hours --
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [BusinessEntityID]
+      ,[NationalIDNumber]
+      ,[LoginID]
+      ,[OrganizationNode]
+      ,[OrganizationLevel]
+      ,[JobTitle]
+      ,[BirthDate]
+      ,[MaritalStatus]
+      ,[Gender]
+      ,[HireDate]
+      ,[SalariedFlag]
+      ,[VacationHours]
+      ,[SickLeaveHours]
+      ,[CurrentFlag]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[HumanResources].[Employee]
+  WHERE VacationHours > (SELECT AVG(VacationHours)  FROM [AdventureWorks2019].[HumanResources].[Employee]  )
