@@ -323,3 +323,14 @@ SELECT TOP (1000) [ProductID]
   -- select avaeragre list price --
   SELECT AVG (ListPrice)
   FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]
+
+
+  -- select  greater than average list price
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [ProductID]
+      ,[StartDate]
+      ,[EndDate]
+      ,[ListPrice]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]
+  WHERE ListPrice > (SELECT AVG(ListPrice)    FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]   )
