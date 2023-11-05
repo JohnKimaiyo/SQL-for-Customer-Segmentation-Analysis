@@ -254,3 +254,9 @@ SELECT TOP (1000) [BusinessEntityID]
    FROM [AdventureWorks2019].[HumanResources].[Employee]
   WHERE MaritalStatus = 'M'
   )
+
+  -- select aberage costrate --
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT AVG(CostRate) [LocationID]
+
+  FROM [AdventureWorks2019].[Production].[Location]
