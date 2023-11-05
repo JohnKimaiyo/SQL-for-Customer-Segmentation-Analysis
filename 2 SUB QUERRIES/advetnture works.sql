@@ -305,3 +305,7 @@ SELECT TOP (1000) [ProductID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[Product]
   WHERE SafetyStockLevel<( SELECT AVG(SafetyStockLevel)   FROM [AdventureWorks2019].[Production].[Product]  )
+
+  -- selct averager  standard cost --
+  SELECT AVG (StandardCost) 
+  FROM [AdventureWorks2019].[Production].[ProductCostHistory]
