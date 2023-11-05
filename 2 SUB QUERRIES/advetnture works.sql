@@ -230,3 +230,27 @@ SELECT TOP (1000) [BusinessEntityID]
   SELECT AVG(VacationHours)
 
   FROM [AdventureWorks2019].[HumanResources].[Employee]
+
+-- select onlly males --
+  SELECT TOP (1000) [BusinessEntityID]
+      ,[NationalIDNumber]
+      ,[LoginID]
+      ,[OrganizationNode]
+      ,[OrganizationLevel]
+      ,[JobTitle]
+      ,[BirthDate]
+      ,[MaritalStatus]
+      ,[Gender]
+      ,[HireDate]
+      ,[SalariedFlag]
+      ,[VacationHours]
+      ,[SickLeaveHours]
+      ,[CurrentFlag]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[HumanResources].[Employee]
+  WHERE MaritalStatus IN (SELECT MaritalStatus
+  
+   FROM [AdventureWorks2019].[HumanResources].[Employee]
+  WHERE MaritalStatus = 'M'
+  )
