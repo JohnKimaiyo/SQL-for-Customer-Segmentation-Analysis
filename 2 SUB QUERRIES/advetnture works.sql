@@ -309,3 +309,13 @@ SELECT TOP (1000) [ProductID]
   -- selct averager  standard cost --
   SELECT AVG (StandardCost) 
   FROM [AdventureWorks2019].[Production].[ProductCostHistory]
+
+
+  /****** Select above averagre price ******/
+SELECT TOP (1000) [ProductID]
+      ,[StartDate]
+      ,[EndDate]
+      ,[StandardCost]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[ProductCostHistory]
+  WHERE StandardCost >  (SELECT AVG (StandardCost)  FROM [AdventureWorks2019].[Production].[ProductCostHistory]   )
