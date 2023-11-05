@@ -56,3 +56,16 @@ SELECT TOP (1000) [id]
   WHERE country = 'Ghana'
 
   )
+
+-- select salary from Ukraine
+  SELECT TOP (1000) [id]
+      ,[name]
+      ,[role]
+      ,[wage]
+      ,[country]
+  FROM [freecodecamp dataset].[dbo].[Sheet1$]
+  WHERE country IN(SELECT country
+  
+   FROM [freecodecamp dataset].[dbo].[Sheet1$]
+  WHERE country = 'Ukraine'
+  )
