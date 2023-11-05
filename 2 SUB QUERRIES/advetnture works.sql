@@ -270,3 +270,8 @@ SELECT AVG(CostRate) [LocationID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[Location]
   WHERE CostRate > (SELECT AVG(CostRate)     FROM [AdventureWorks2019].[Production].[Location] )
+
+  -- avergare stoc level
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT AVG(SafetyStockLevel)
+  FROM [AdventureWorks2019].[Production].[Product]
