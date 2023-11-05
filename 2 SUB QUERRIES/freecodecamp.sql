@@ -84,3 +84,13 @@ SELECT TOP (1000) [id]
   WHERE country = 'Cameroon'
   
   );
+
+
+  -- select by name --
+  SELECT TOP (1000) [id]
+      ,[name]
+      ,[role]
+      ,[wage]
+      ,[country]
+  FROM [freecodecamp dataset].[dbo].[Sheet1$]
+  WHERE name IN('Dexter Rumi',   'Olivie Veer ',  ' Gyasi Sana');
