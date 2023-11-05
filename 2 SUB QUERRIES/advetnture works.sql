@@ -319,3 +319,7 @@ SELECT TOP (1000) [ProductID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[ProductCostHistory]
   WHERE StandardCost >  (SELECT AVG (StandardCost)  FROM [AdventureWorks2019].[Production].[ProductCostHistory]   )
+
+  -- select avaeragre list price --
+  SELECT AVG (ListPrice)
+  FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]
