@@ -255,8 +255,18 @@ SELECT TOP (1000) [BusinessEntityID]
   WHERE MaritalStatus = 'M'
   )
 
-  -- select aberage costrate --
+  -- select average costrate --
   /****** Script for SelectTopNRows command from SSMS  ******/
 SELECT AVG(CostRate) [LocationID]
 
   FROM [AdventureWorks2019].[Production].[Location]
+
+
+-- select greater than cost rate --
+  SELECT TOP (1000) [LocationID]
+      ,[Name]
+      ,[CostRate]
+      ,[Availability]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[Location]
+  WHERE CostRate > (SELECT AVG(CostRate)     FROM [AdventureWorks2019].[Production].[Location] )
