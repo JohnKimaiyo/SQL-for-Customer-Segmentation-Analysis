@@ -356,3 +356,10 @@ SELECT TOP (1000) [TransactionID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[TransactionHistoryArchive]
   WHERE ActualCost >(SELECT AVG(ActualCost) FROM [AdventureWorks2019].[Production].[TransactionHistoryArchive]    )
+
+  --select avg ordered qty --
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT AVG(OrderQty) [WorkOrderID]
+      
+  FROM [AdventureWorks2019].[Production].[WorkOrder]
+  
