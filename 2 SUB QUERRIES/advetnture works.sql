@@ -383,3 +383,19 @@ SELECT AVG(OrderQty) [WorkOrderID]
   SELECT  AVG(OperationSequence) 
      
   FROM [AdventureWorks2019].[Production].[WorkOrderRouting]
+
+--  selctt operational sequence above average
+  SELECT TOP (1000) [WorkOrderID]
+      ,[ProductID]
+      ,[OperationSequence]
+      ,[LocationID]
+      ,[ScheduledStartDate]
+      ,[ScheduledEndDate]
+      ,[ActualStartDate]
+      ,[ActualEndDate]
+      ,[ActualResourceHrs]
+      ,[PlannedCost]
+      ,[ActualCost]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[WorkOrderRouting]
+  WHERE OperationSequence >(SELECT AVG(OperationSequence) FROM  [AdventureWorks2019].[Production].[WorkOrderRouting] );
