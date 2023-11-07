@@ -427,3 +427,18 @@ SELECT TOP (1000) [ProductID]
   /****** Script for SelectTopNRows command from SSMS  ******/
 SELECT AVG(UnitPrice) 
   FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
+
+  -- select order qty > avg price
+  SELECT TOP (1000) [PurchaseOrderID]
+      ,[PurchaseOrderDetailID]
+      ,[DueDate]
+      ,[OrderQty]
+      ,[ProductID]
+      ,[UnitPrice]
+      ,[LineTotal]
+      ,[ReceivedQty]
+      ,[RejectedQty]
+      ,[StockedQty]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
+  WHERE UnitPrice >( SELECT AVG(UnitPrice)  FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]   )
