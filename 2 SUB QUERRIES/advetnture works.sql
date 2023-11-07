@@ -471,3 +471,8 @@ SELECT TOP (1000) [PurchaseOrderID]
   /****** Script for SelectTopNRows command from SSMS  ******/
 SELECT AVG(ExpYear) 
   FROM [AdventureWorks2019].[Sales].[CreditCard]
+
+  -- select avg end year average rate
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT  AVG(EndOfDayRate)
+  FROM [AdventureWorks2019].[Sales].[CurrencyRate]
