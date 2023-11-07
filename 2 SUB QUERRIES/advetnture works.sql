@@ -363,3 +363,17 @@ SELECT AVG(OrderQty) [WorkOrderID]
       
   FROM [AdventureWorks2019].[Production].[WorkOrder]
   
+
+  -- SELECT ORDER QTY > AVG
+  SELECT TOP (1000) [WorkOrderID]
+      ,[ProductID]
+      ,[OrderQty]
+      ,[StockedQty]
+      ,[ScrappedQty]
+      ,[StartDate]
+      ,[EndDate]
+      ,[DueDate]
+      ,[ScrapReasonID]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[WorkOrder]
+  WHERE OrderQty > (SELECT AVG(OrderQty) FROM [AdventureWorks2019].[Production].[WorkOrder]);
