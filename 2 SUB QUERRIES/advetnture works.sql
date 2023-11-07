@@ -421,3 +421,9 @@ SELECT TOP (1000) [ProductID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Purchasing].[ProductVendor]
   WHERE StandardPrice >(SELECT AVG(StandardPrice)   FROM [AdventureWorks2019].[Purchasing].[ProductVendor]   )
+
+
+  -- select the average price --
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT AVG(UnitPrice) 
+  FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
