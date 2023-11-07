@@ -405,3 +405,19 @@ SELECT AVG(OrderQty) [WorkOrderID]
 SELECT AVG(StandardPrice) [ProductID]
       
   FROM [AdventureWorks2019].[Purchasing].[ProductVendor]
+
+
+  /****** Select standard price above average ******/
+SELECT TOP (1000) [ProductID]
+      ,[BusinessEntityID]
+      ,[AverageLeadTime]
+      ,[StandardPrice]
+      ,[LastReceiptCost]
+      ,[LastReceiptDate]
+      ,[MinOrderQty]
+      ,[MaxOrderQty]
+      ,[OnOrderQty]
+      ,[UnitMeasureCode]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Purchasing].[ProductVendor]
+  WHERE StandardPrice >(SELECT AVG(StandardPrice)   FROM [AdventureWorks2019].[Purchasing].[ProductVendor]   )
