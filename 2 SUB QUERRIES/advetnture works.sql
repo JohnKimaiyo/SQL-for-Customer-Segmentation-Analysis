@@ -465,3 +465,9 @@ SELECT TOP (1000) [PurchaseOrderID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderHeader]
   WHERE SubTotal >(SELECT AVG(SubTotal)  FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderHeader]   )
+
+
+  -- selecta vg   expiry year
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT AVG(ExpYear) 
+  FROM [AdventureWorks2019].[Sales].[CreditCard]
