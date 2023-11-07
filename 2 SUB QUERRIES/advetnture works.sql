@@ -488,3 +488,8 @@ SELECT  AVG(EndOfDayRate)
   FROM [AdventureWorks2019].[Sales].[CurrencyRate]
 
   WHERE EndOfDayRate >(SELECT AVG(EndOfDayRate)   FROM [AdventureWorks2019].[Sales].[CurrencyRate]  )
+
+  -- selectavg  unit price
+  SELECT AVG (UnitPrice)
+      
+  FROM [AdventureWorks2019].[Sales].[SalesOrderDetail]
