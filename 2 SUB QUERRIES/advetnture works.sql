@@ -399,3 +399,9 @@ SELECT AVG(OrderQty) [WorkOrderID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[WorkOrderRouting]
   WHERE OperationSequence >(SELECT AVG(OperationSequence) FROM  [AdventureWorks2019].[Production].[WorkOrderRouting] );
+
+  -- select avg price
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT AVG(StandardPrice) [ProductID]
+      
+  FROM [AdventureWorks2019].[Purchasing].[ProductVendor]
