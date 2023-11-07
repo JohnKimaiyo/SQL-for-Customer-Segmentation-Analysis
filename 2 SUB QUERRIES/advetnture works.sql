@@ -377,3 +377,9 @@ SELECT AVG(OrderQty) [WorkOrderID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[WorkOrder]
   WHERE OrderQty > (SELECT AVG(OrderQty) FROM [AdventureWorks2019].[Production].[WorkOrder]);
+
+  -- slect avg operation sequence --
+
+  SELECT  AVG(OperationSequence) 
+     
+  FROM [AdventureWorks2019].[Production].[WorkOrderRouting]
