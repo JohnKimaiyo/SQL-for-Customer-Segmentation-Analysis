@@ -476,3 +476,15 @@ SELECT AVG(ExpYear)
   /****** Script for SelectTopNRows command from SSMS  ******/
 SELECT  AVG(EndOfDayRate)
   FROM [AdventureWorks2019].[Sales].[CurrencyRate]
+
+  -- select eend of year rate >  avg
+  SELECT TOP (1000) [CurrencyRateID]
+      ,[CurrencyRateDate]
+      ,[FromCurrencyCode]
+      ,[ToCurrencyCode]
+      ,[AverageRate]
+      ,[EndOfDayRate]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Sales].[CurrencyRate]
+
+  WHERE EndOfDayRate >(SELECT AVG(EndOfDayRate)   FROM [AdventureWorks2019].[Sales].[CurrencyRate]  )
