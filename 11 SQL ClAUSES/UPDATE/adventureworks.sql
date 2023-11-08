@@ -102,3 +102,20 @@ SELECT TOP (1000) [ProductID]
       ,[ListPrice]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]
+
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+update [Production].[TransactionHistoryArchive]
+SET ActualCost = ActualCost +50;
+
+
+SELECT TOP (1000) [TransactionID]
+      ,[ProductID]
+      ,[ReferenceOrderID]
+      ,[ReferenceOrderLineID]
+      ,[TransactionDate]
+      ,[TransactionType]
+      ,[Quantity]
+      ,[ActualCost]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[TransactionHistory]
