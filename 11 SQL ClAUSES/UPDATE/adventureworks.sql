@@ -155,3 +155,24 @@ SELECT TOP (1000) [ProductID]
       ,[UnitMeasureCode]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Purchasing].[ProductVendor]
+
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+update [Purchasing].[PurchaseOrderDetail]
+set UnitPrice = UnitPrice + 100;
+
+
+
+
+SELECT TOP (1000) [PurchaseOrderID]
+      ,[PurchaseOrderDetailID]
+      ,[DueDate]
+      ,[OrderQty]
+      ,[ProductID]
+      ,[UnitPrice]
+      ,[LineTotal]
+      ,[ReceivedQty]
+      ,[RejectedQty]
+      ,[StockedQty]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
