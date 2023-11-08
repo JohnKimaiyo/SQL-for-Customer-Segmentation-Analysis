@@ -227,3 +227,39 @@ SELECT TOP (1000) [SalesOrderID]
       ,[rowguid]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Sales].[SalesOrderDetail]
+
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+update [Sales].SalesOrderHeader
+
+set Freight = Freight + 1000000;
+
+
+
+SELECT TOP (1000) [SalesOrderID]
+      ,[RevisionNumber]
+      ,[OrderDate]
+      ,[DueDate]
+      ,[ShipDate]
+      ,[Status]
+      ,[OnlineOrderFlag]
+      ,[SalesOrderNumber]
+      ,[PurchaseOrderNumber]
+      ,[AccountNumber]
+      ,[CustomerID]
+      ,[SalesPersonID]
+      ,[TerritoryID]
+      ,[BillToAddressID]
+      ,[ShipToAddressID]
+      ,[ShipMethodID]
+      ,[CreditCardID]
+      ,[CreditCardApprovalCode]
+      ,[CurrencyRateID]
+      ,[SubTotal]
+      ,[TaxAmt]
+      ,[Freight]
+      ,[TotalDue]
+      ,[Comment]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Sales].[SalesOrderHeader]
