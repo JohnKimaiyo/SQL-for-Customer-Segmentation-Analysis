@@ -33,3 +33,13 @@ SELECT TOP (1000) [BusinessEntityID]
       ,[PayFrequency]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[HumanResources].[EmployeePayHistory]
+
+  -- /****** Script for SelectTopNRows command from SSMS  ******/
+UPDATE [Production].Location
+set  CostRate = CostRate + 10;
+SELECT TOP (1000) [LocationID]
+      ,[Name]
+      ,[CostRate]
+      ,[Availability]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[Location]
