@@ -196,3 +196,17 @@ SELECT TOP (1000) [PurchaseOrderID]
       ,[TotalDue]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderHeader]
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+update [Sales].CurrencyRate
+set AverageRate = AverageRate +10;
+
+
+SELECT TOP (1000) [CurrencyRateID]
+      ,[CurrencyRateDate]
+      ,[FromCurrencyCode]
+      ,[ToCurrencyCode]
+      ,[AverageRate]
+      ,[EndOfDayRate]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Sales].[CurrencyRate]
