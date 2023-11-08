@@ -119,3 +119,22 @@ SELECT TOP (1000) [TransactionID]
       ,[ActualCost]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[TransactionHistory]
+
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+update [Production].[WorkOrderRouting]
+set PlannedCost = PlannedCost + 100;
+
+SELECT TOP (1000) [WorkOrderID]
+      ,[ProductID]
+      ,[OperationSequence]
+      ,[LocationID]
+      ,[ScheduledStartDate]
+      ,[ScheduledEndDate]
+      ,[ActualStartDate]
+      ,[ActualEndDate]
+      ,[ActualResourceHrs]
+      ,[PlannedCost]
+      ,[ActualCost]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[WorkOrderRouting]
