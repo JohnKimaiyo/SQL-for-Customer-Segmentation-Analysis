@@ -138,3 +138,20 @@ SELECT TOP (1000) [WorkOrderID]
       ,[ActualCost]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[WorkOrderRouting]
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+update [Purchasing].[ProductVendor]
+set StandardPrice = StandardPrice + 500;
+
+SELECT TOP (1000) [ProductID]
+      ,[BusinessEntityID]
+      ,[AverageLeadTime]
+      ,[StandardPrice]
+      ,[LastReceiptCost]
+      ,[LastReceiptDate]
+      ,[MinOrderQty]
+      ,[MaxOrderQty]
+      ,[OnOrderQty]
+      ,[UnitMeasureCode]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Purchasing].[ProductVendor]
