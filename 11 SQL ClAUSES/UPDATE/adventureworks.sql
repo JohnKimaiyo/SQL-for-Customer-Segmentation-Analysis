@@ -210,3 +210,20 @@ SELECT TOP (1000) [CurrencyRateID]
       ,[EndOfDayRate]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Sales].[CurrencyRate]
+
+  update [Sales].[SalesOrderDetail]
+set UnitPrice = UnitPrice + 100;
+
+
+SELECT TOP (1000) [SalesOrderID]
+      ,[SalesOrderDetailID]
+      ,[CarrierTrackingNumber]
+      ,[OrderQty]
+      ,[ProductID]
+      ,[SpecialOfferID]
+      ,[UnitPrice]
+      ,[UnitPriceDiscount]
+      ,[LineTotal]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Sales].[SalesOrderDetail]
