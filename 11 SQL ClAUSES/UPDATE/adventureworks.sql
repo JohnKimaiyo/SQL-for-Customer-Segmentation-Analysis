@@ -90,3 +90,15 @@ SELECT TOP (1000) [ProductID]
       ,[StandardCost]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Production].[ProductCostHistory]
+
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+update [Production].[ProductListPriceHistory]
+set ListPrice = ListPrice + 10;
+
+SELECT TOP (1000) [ProductID]
+      ,[StartDate]
+      ,[EndDate]
+      ,[ListPrice]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Production].[ProductListPriceHistory]
