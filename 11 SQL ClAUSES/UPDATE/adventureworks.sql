@@ -176,3 +176,23 @@ SELECT TOP (1000) [PurchaseOrderID]
       ,[StockedQty]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderDetail]
+
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+update [Purchasing].[PurchaseOrderHeader]
+set SubTotal = SubTotal + 1000;
+
+SELECT TOP (1000) [PurchaseOrderID]
+      ,[RevisionNumber]
+      ,[Status]
+      ,[EmployeeID]
+      ,[VendorID]
+      ,[ShipMethodID]
+      ,[OrderDate]
+      ,[ShipDate]
+      ,[SubTotal]
+      ,[TaxAmt]
+      ,[Freight]
+      ,[TotalDue]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Purchasing].[PurchaseOrderHeader]
