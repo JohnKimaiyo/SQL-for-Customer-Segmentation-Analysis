@@ -40,3 +40,14 @@ CREATE TABLE JANUARY (
    SALARY DECIMAL (19, 3),
    PRIMARY KEY (ID)
 );
+
+--- create table values
+
+INSERT INTO JANUARY VALUES 
+(1, 'Ramesh', 42, 'Ahmedabad', 3000.00),
+(2, 'Khilan', 35, 'Delhi', 2500.00),
+(3, 'Kaushik', 33, 'Kota', 3000.00),
+(4, 'Chaitali', 35, 'Mumbai', 7500.00),
+(5, 'Hardik', 37, 'Bhopal', 9500.00),
+(6, 'Komal', 32, 'Hyderabad', 5500.00),
+(7, 'Muffy', 44, 'Indore', 20000.00);
