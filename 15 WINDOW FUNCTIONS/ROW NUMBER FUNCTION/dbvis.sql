@@ -247,3 +247,10 @@ SELECT TOP (1000) [id]
 	  ,ROW_NUMBER() 
 	  OVER(Order BY score DESC) as rank 
   FROM [dbvis database].[dbo].[june_exam_scores]
+
+  SELECT TOP (1000) [id]
+      ,[name]
+      ,[score]
+	  , ROW_NUMBER()
+	  OVER(Order By score DESC ) as rank
+  FROM [dbvis database].[dbo].[may_exam_scores]
