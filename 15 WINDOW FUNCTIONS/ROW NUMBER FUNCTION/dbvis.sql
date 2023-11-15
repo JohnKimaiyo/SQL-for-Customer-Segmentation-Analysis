@@ -85,3 +85,15 @@ VALUES
     (7, 
 'Andrew'
 , 285);
+
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [id]
+      ,[name]
+      ,[score]
+	  ,ROW_NUMBER()
+OVER (
+ORDER BY
+ score 
+DESC
+) as rank
+  FROM [dbvis database].[dbo].[feb_exam_scores]
