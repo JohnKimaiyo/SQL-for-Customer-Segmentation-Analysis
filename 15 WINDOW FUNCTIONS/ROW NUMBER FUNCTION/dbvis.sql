@@ -254,3 +254,10 @@ SELECT TOP (1000) [id]
 	  , ROW_NUMBER()
 	  OVER(Order By score DESC ) as rank
   FROM [dbvis database].[dbo].[may_exam_scores]
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [id]
+      ,[name]
+      ,[score]
+	  ,RANK() OVER(Order By score DESC) as rank
+  FROM [dbvis database].[dbo].[apr_exam_scores]
