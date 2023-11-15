@@ -146,3 +146,40 @@ ORDER BY
 DESC
 ) as rank
   FROM [dbvis database].[dbo].[mar_exam_scores]
+
+
+
+  CREATE TABLE
+ apr_exam_scores (
+    id INT 
+PRIMARY KEY
+,
+    name 
+VARCHAR
+(50),
+    score INT
+);
+INSERT INTO
+ apr_exam_scores (id, name, score)
+VALUES
+    (1, 
+'Alice'
+, 485),
+    (2, 
+'Bob'
+, 492),
+    (3, 
+'Charlie'
+, 478),
+    (4, 
+'Dave'
+, 491),
+    (5, 
+'Eve'
+, 489),
+    (6, 
+'John'
+, 492),
+    (7, 
+'Andrew'
+, 485);
