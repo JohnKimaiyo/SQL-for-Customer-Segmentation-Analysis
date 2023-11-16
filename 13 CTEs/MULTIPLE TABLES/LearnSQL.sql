@@ -15,3 +15,19 @@ SELECT b.employee_id, b.first_name, b.last_name, b.position, b.bonus, ap.average
 FROM Bonus_jan b
 JOIN avg_position ap
 ON b.position = ap.position;
+
+-- claculate fifferece betweee actual and average bonus
+WITH CTE_Difference AS (
+    SELECT
+        bonus,
+        average_bonus_for_position,
+        ( bonus -average_bonus_for_position) AS average_actual_bonus_difference
+      FROM [LearnSQL dbo].[dbo].[Bonus_jan]
+        
+)
+SELECT
+  bonus,
+     average_bonus_for_position,
+    average_actual_bonus_difference
+
+     FROM CTE_Difference;
