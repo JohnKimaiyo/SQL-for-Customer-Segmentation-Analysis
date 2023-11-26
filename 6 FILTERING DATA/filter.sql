@@ -44,3 +44,11 @@ SELECT TOP (1000) [BusinessEntityID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[HumanResources].[EmployeePayHistory]
   WHERE year([RateChangeDate]) = '2008';
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [JobCandidateID]
+      ,[BusinessEntityID]
+      ,[Resume]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[HumanResources].[JobCandidate]
+  WHERE year([ModifiedDate]) = '2007';
