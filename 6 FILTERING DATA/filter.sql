@@ -72,3 +72,12 @@ SELECT TOP (1000) [BusinessEntityID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[Person].[BusinessEntity]
   WHERE YEAR([ModifiedDate]) = '2017';
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [BusinessEntityID]
+      ,[AddressID]
+      ,[AddressTypeID]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Person].[BusinessEntityAddress]
+  WHERE  year([ModifiedDate]) = '2014';
