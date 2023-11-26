@@ -52,3 +52,16 @@ SELECT TOP (1000) [JobCandidateID]
       ,[ModifiedDate]
   FROM [AdventureWorks2019].[HumanResources].[JobCandidate]
   WHERE year([ModifiedDate]) = '2007';
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [AddressID]
+      ,[AddressLine1]
+      ,[AddressLine2]
+      ,[City]
+      ,[StateProvinceID]
+      ,[PostalCode]
+      ,[SpatialLocation]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2019].[Person].[Address]
+  WHERE year([ModifiedDate]) = '2008';
