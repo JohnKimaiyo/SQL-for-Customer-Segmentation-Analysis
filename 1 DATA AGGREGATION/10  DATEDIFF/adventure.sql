@@ -1,3 +1,0 @@
-
-
-  SELECT DATEDIFF(month,'2010/01/30','2011/01/25') AS DateDiff;
